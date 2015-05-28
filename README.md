@@ -43,12 +43,23 @@ See yourself them:
 $ docker run -i -t leodido/treetagger:latest ls /usr/local
 ```
 
+Installation
+------------
+
+Directly pull this image from the docker index.
+
+```
+$ docker pull leodido/treetagger:latest
+```
+
 Usage
 -----
 
 ### Tagging
 
-Suppose you want to (tokenize and) tag an Italian text. The script to use is `tree-tagger-italian <file>*`.
+Suppose you want to (tokenize and) tag an Italian text.
+
+The script to use is `tree-tagger-italian <file>*`.
 
 It expects UTF8 encoded input files as arguments. If no files have been specified, input from stdin is expected.
 
@@ -149,22 +160,6 @@ Supported languages
 15. Spanish
 16. Swahili
 17. Mongolian (only parameter file provided, no scripts)
-
-Installation
-------------
-
-You can clone this repository and manually build it.
-
-```
-cd treetagger.docker/
-./build.bash
-```
-
-Or directly pull this image from the docker index.
-
-```
-docker pull leodido/treetagger:latest
-```
 
 Todos
 -----
