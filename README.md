@@ -98,6 +98,8 @@ nome	NCMS	nome
 ?	    Fit	?
 ```
 
+Finegrained?
+
 ```bash
 $ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese-finegrained
 ```
