@@ -8,19 +8,19 @@ You will not have to manually install TreeTagger in your system again.
 What it is
 ----------
 
-TreeTagger is a **tool for annotating text with part-of-speech** ([POS tagging](http://en.wikipedia.org/wiki/Part-of-speech_tagging)) **and lemma information**.
+**A tool for annotating text with part-of-speech** ([POS tagging](http://en.wikipedia.org/wiki/Part-of-speech_tagging)) **and lemma information**.
 
 TreeTagger consists of two programs:
 
 1. `train-tree-tagger`
 
-    Ccreates a parameter file from a lexicon and a handtagged corpus. 
+    Creates a parameter file from a lexicon and a handtagged corpus. 
     
 2. `tree-tagger` 
 
     Annotates the text with part-of-speech tags, given a parameter file and a text file as arguments.
 
-Primary files contained in this package are:
+This image contains:
 
 - training program at `train-tree-tagger`
 
@@ -34,15 +34,13 @@ Primary files contained in this package are:
     
 - parameter files, chunker parameter files, and abbreviations
 
-- documentaion
-
-- language tagsets references
+- documentaion and language tagsets references
 
 
-See yourself the contents inside the docker image:
+See yourself them:
 
 ```bash
-docker run -i -t leodido/treetagger:latest ls /usr/local
+$ docker run -i -t leodido/treetagger:latest ls /usr/local
 ```
 
 Usage
@@ -55,7 +53,7 @@ Suppose you want to (tokenize and) tag an Italian text. The script to use is `tr
 It expects UTF8 encoded input files as arguments. If no files have been specified, input from stdin is expected.
 
 ```bash
-echo 'Proviamo semplicemente a eseguire un test di prova.' | docker run --rm -i leodido/treetagger:latest tree-tagger-italian
+$ echo 'Proviamo semplicemente a eseguire un test di prova.' | docker run --rm -i leodido/treetagger:latest tree-tagger-italian
 ```
 
 Outputs:
@@ -75,14 +73,14 @@ prova	        NOM	        prova
 Now, try with some Portuguese.
 
 ```bash
-echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese
+$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese
 ```
 
 Results:
 
 ```
 Qual	PT0	    qual
-é	    VMI	    ser
+é	     VMI	 ser
 o	    DA0	    o
 seu	    DP3	    seu
 nome	NCMS	nome
@@ -90,14 +88,14 @@ nome	NCMS	nome
 ```
 
 ```bash
-echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese-finegrained
+$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese-finegrained
 ```
 
 Results:
 
 ```
 Qual	PT0CS000	qual
-é	    VMIP3S0	    ser
+é       VMIP3S0	 ser
 o	    DA0MS0	    o
 seu	    DP3MSS	    seu
 nome	NCMS000	    nome
@@ -112,7 +110,7 @@ And so on for other supported languages.
 Suppose you want to tokenize, tag and annotate a German text with nominal and verbal chunks.
 
 ```bash
-echo 'Das ist ein Test.' | docker run -i leodido/treetagger:latest tagger-chunker-german
+$ echo 'Das ist ein Test.' | docker run -i leodido/treetagger:latest tagger-chunker-german
 ```
 
 Outputs:
