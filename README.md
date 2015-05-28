@@ -95,7 +95,7 @@ Qual	PT0	    qual
 o	    DA0	    o
 seu	    DP3	    seu
 nome	NCMS	nome
-?	    Fit	?
+?	    Fit	    ?
 ```
 
 Finegrained?
