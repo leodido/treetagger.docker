@@ -1,6 +1,8 @@
 treetagger.docker
 =================
 
+[![Build](https://img.shields.io/circleci/project/leodido/treetagger.docker/master.svg?style=flat-square)](https://circleci.com/gh/leodido/treetagger.docker) [![Docker](https://img.shields.io/badge/docker-ready-blue.svg?style=flat-square)](https://registry.hub.docker.com/u/leodido/treetagger)
+
 This repository contains docker images to build and ship ready to use [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) instances.
 
 You will not have to manually install TreeTagger in your system again.
