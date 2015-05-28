@@ -65,9 +65,9 @@ main() {
 	set -eo pipefail; [[ "$TRACE" ]] && set -x
 	declare cmd="$1"
 	case "$cmd" in
-		test)	shift; testall "$@";;
-		push)   shift; push "@";;
-		*)		build "$@";;
+		test) shift; testall "$@";;
+		push) shift; push "$@";;
+		*) build "$@";;
 	esac
 }
 
