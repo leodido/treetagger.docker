@@ -146,9 +146,9 @@ Test	NN	    Test
 Supported languages
 -------------------
 
-17 languages are supported: bulgarian, dutch, english, estonian, finnish, french, galician, german, italian, latin, portuguese, polish, russian, slovak, spanish, swahili, mongolian (only parameter file provided, no scripts).
+**17 languages** are **supported**: bulgarian, dutch, english, estonian, finnish, french, galician, german, italian, latin, portuguese, polish, russian, slovak, spanish, swahili, mongolian (only parameter file provided, no scripts).
 
-Some of them have alternative parameter files. 
+Some of them have also alternative parameter files. 
 
 Todos
 -----
