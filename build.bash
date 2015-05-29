@@ -53,9 +53,11 @@ testall() {
 push() {
 	declare build_files="${*:-$OPTIONS}"
 	for file in ${build_files}; do
-		( source "$file"
+		( source "${file}"
 		for tag in ${TAGS}; do
-			[[ ${PUSH_IMAGE} ]] && docker push ${tag}
+			if docker history ${tag} &> /dev/null; then
+				[[ ${PUSH_IMAGE} ]] && docker push ${tag}
+			fi
 		done
 		exit 0 )
 	done
