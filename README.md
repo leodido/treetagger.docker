@@ -14,36 +14,35 @@ What it is
 
 TreeTagger consists of two programs:
 
-1. `train-tree-tagger`
+1. **train-tree-tagger**
 
     Creates a parameter file from a lexicon and a handtagged corpus. 
     
-2. `tree-tagger` 
+2. **tree-tagger**
 
     Annotates the text with part-of-speech tags, given a parameter file and a text file as arguments.
 
 This image contains:
 
-- training program at `train-tree-tagger`
+- training program and tagger executables      
 
-- tagger program at `tree-tagger`       
-
-- program for tokenization (used by the shell scripts) at `separate-punctuation`
+- program for tokenization (i.e., **separate-punctuation**)
 
 - shell scripts (shortcuts) which simplify tagging and chunking:
 
-    e.g., `tree-tagger-italian`, `tree-tagger-german`, `tagger-chunker-english`, ...
+    e.g., **tree-tagger-italian**, **tree-tagger-german**, **tagger-chunker-english**, ...
     
-- parameter files, chunker parameter files, and abbreviations
+- parameter files, chunker parameter files, and abbreviations files
 
 - documentaion and language tagsets references
-
 
 See yourself them:
 
 ```bash
-$ docker run -i -t leodido/treetagger:latest ls /usr/local
+$ docker run -i -t leodido/treetagger ls /usr/local
 ```
+
+At this [link](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger) the offical page and further documentation.
 
 Installation
 ------------
@@ -51,7 +50,7 @@ Installation
 Directly pull this image from the docker index.
 
 ```
-$ docker pull leodido/treetagger:latest
+$ docker pull leodido/treetagger
 ```
 
 Usage
@@ -61,12 +60,12 @@ Usage
 
 Suppose you want to (tokenize and) tag an Italian text.
 
-The script to use is `tree-tagger-italian <file>*`.
+The script to use is **tree-tagger-italian**.
 
 It expects UTF8 encoded input files as arguments. If no files have been specified, input from stdin is expected.
 
 ```bash
-$ echo 'Proviamo semplicemente a eseguire un test di prova.' | docker run --rm -i leodido/treetagger:latest tree-tagger-italian
+$ echo 'Proviamo semplicemente a eseguire un test di prova.' | docker run --rm -i leodido/treetagger tree-tagger-italian
 ```
 
 Outputs:
@@ -86,7 +85,7 @@ prova	        NOM	        prova
 Now, try with some Portuguese.
 
 ```bash
-$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese
+$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger tree-tagger-portuguese
 ```
 
 Results:
@@ -103,7 +102,7 @@ nome	NCMS	nome
 Finegrained?
 
 ```bash
-$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger:latest tree-tagger-portuguese-finegrained
+$ echo 'Qual é o seu nome?' | docker run --rm -i leodido/treetagger tree-tagger-portuguese-finegrained
 ```
 
 Results:
@@ -125,7 +124,7 @@ And so on for other supported languages.
 Suppose you want to tokenize, tag and annotate a German text with nominal and verbal chunks.
 
 ```bash
-$ echo 'Das ist ein Test.' | docker run -i leodido/treetagger:latest tagger-chunker-german
+$ echo 'Das ist ein Test.' | docker run -i leodido/treetagger tagger-chunker-german
 ```
 
 Outputs:
@@ -147,23 +146,9 @@ Test	NN	    Test
 Supported languages
 -------------------
 
-1. Bulgarian
-2. Dutch
-3. English
-4. Estonian
-5. Finnish
-6. French
-7. Galician
-8. German
-9. Italian
-10. Latin
-11. Portuguese
-12. Polish
-13. Russian
-14. Slovak
-15. Spanish
-16. Swahili
-17. Mongolian (only parameter file provided, no scripts)
+**17 languages** are **supported**: bulgarian, dutch, english, estonian, finnish, french, galician, german, italian, latin, portuguese, polish, russian, slovak, spanish, swahili, mongolian (only parameter file provided, no scripts).
+
+Some of them have also alternative parameter files. 
 
 Todos
 -----
