@@ -150,11 +150,6 @@ Supported languages
 
 Some of them have also alternative parameter files. 
 
-Todos
------
-
-- Add support for Chinese, and Spoken French.
-
 Credits
 -------
 
